@@ -1,0 +1,48 @@
+name: 포켓몬 재입고 확인
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokemon-restock-monitor
+  cancel-in-progress: false
+
+jobs:
+  check-stock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 저장소 불러오기
+        uses: actions/checkout@v4
+
+      - name: Node.js 준비
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 브라우저 프로그램 설치
+        run: |
+          npm install playwright
+          npx playwright install --with-deps chromium
+
+      - name: 재고 확인
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node monitor.mjs
+
+      - name: 알림 완료 상태 저장
+        run: |
+          if [ -f .restock-notified ] && ! git ls-files --error-unmatch .restock-notified >/dev/null 2>&1; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .restock-notified
+            git commit -m "재입고 알림 전송 완료"
+            git push
+          fi
