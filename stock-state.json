@@ -1054,6 +1054,11 @@
     "url": "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=114166533",
     "soldOut": true
   },
+  "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=131038465": {
+    "name": "포켓몬센터 포켓몬 카드 게임 프리미엄 레더 플립 덱케이스 피카츄",
+    "url": "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=131038465",
+    "soldOut": false
+  },
   "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=114167721": {
     "name": "포켓몬 카드 게임 카드 실드 「맛보돈」",
     "url": "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=114167721",
@@ -1063,11 +1068,6 @@
     "name": "포켓몬 카드 게임 덱 케이스 「하나지방의 첫걸음」",
     "url": "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=131326217",
     "soldOut": true
-  },
-  "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=131038465": {
-    "name": "포켓몬센터 포켓몬 카드 게임 프리미엄 레더 플립 덱케이스 피카츄",
-    "url": "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=131038465",
-    "soldOut": false
   },
   "https://www.pokemonstore.co.kr/pages/product/product-detail.html?productNo=130849942": {
     "name": "포켓몬 카드 게임 카드 실드 「따라큐&마자용」",
